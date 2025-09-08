@@ -2,41 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Morfildotech Cybersecurity Design System - Professional Futuristic Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Core Cybersecurity Color Palette */
+    --background: 220 20% 8%;
+    --foreground: 220 10% 95%;
+    
+    --card: 220 15% 12%;
+    --card-foreground: 220 10% 95%;
+    
+    --popover: 220 15% 12%;
+    --popover-foreground: 220 10% 95%;
+    
+    /* Cyber Blue Primary */
+    --primary: 220 90% 25%;
+    --primary-foreground: 220 10% 98%;
+    
+    /* Dark Surface Secondary */
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 220 10% 90%;
+    
+    --muted: 220 10% 20%;
+    --muted-foreground: 220 8% 60%;
+    
+    /* Neon Cyan Accent */
+    --accent: 180 100% 50%;
+    --accent-foreground: 220 20% 8%;
+    
+    /* Neon Green Success */
+    --success: 140 80% 50%;
+    --success-foreground: 220 20% 8%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 10% 98%;
+    
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 180 100% 50%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Cybersecurity Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(220 90% 25%), hsl(180 100% 50%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 15% 12%), hsl(220 20% 8%));
+    --gradient-surface: linear-gradient(135deg, hsl(220 15% 12%), hsl(220 12% 10%));
+    
+    /* Glow Effects */
+    --glow-cyber: 0 0 30px hsl(180 100% 50% / 0.3);
+    --glow-primary: 0 0 20px hsl(220 90% 25% / 0.4);
+    --glow-success: 0 0 20px hsl(140 80% 50% / 0.3);
+    
+    /* Shadows */
+    --shadow-cyber: 0 10px 40px -10px hsl(180 100% 50% / 0.2);
+    --shadow-card: 0 8px 32px -8px hsl(220 20% 4% / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +124,51 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background: var(--gradient-dark);
+  }
+  
+  /* Cybersecurity Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+  
+  h1 {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer components {
+  /* Cyber Glow Animation */
+  .cyber-glow {
+    box-shadow: var(--glow-cyber);
+    transition: var(--transition-glow);
+  }
+  
+  .cyber-glow:hover {
+    box-shadow: var(--glow-cyber), 0 0 50px hsl(180 100% 50% / 0.4);
+  }
+  
+  /* Card Glow */
+  .card-glow {
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-glow:hover {
+    box-shadow: var(--shadow-card), var(--glow-primary);
+    transform: translateY(-2px);
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-cyber {
+    background: var(--gradient-cyber);
+  }
+  
+  .bg-gradient-surface {
+    background: var(--gradient-surface);
   }
 }
