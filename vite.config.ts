@@ -4,8 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Use environment variable for base path
-  base: process.env.VITE_BASE || "/",
+  // 👇 Correct base path for GitHub Pages
+  // Use repo name in production, root ("/") in development
+  base: mode === "production" ? "/morfildotech-cyber-fortress/" : "/",
 
   server: {
     host: "::",
