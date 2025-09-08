@@ -4,11 +4,8 @@
     <meta charset="utf-8">
     <title>Morfildotech Pvt Ltd</title>
     <script type="text/javascript">
-        // GitHub Pages SPA redirect
-        // This script takes the current url and converts the path and query
-        // string into just a query string, and then redirects the browser
-        // to the new url with the path as a query string parameter
-        var pathSegmentsToKeep = 0;
+        // GitHub Pages SPA redirect for subdirectory
+        var pathSegmentsToKeep = 1; // Keep the repo name segment
         var l = window.location;
         l.replace(
             l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
