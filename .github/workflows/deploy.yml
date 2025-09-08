@@ -2,36 +2,43 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
-  contents: write  
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout
+      # Step 1: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-      
+
+      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
           cache: 'npm'
-        
+
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm ci
-      
+
+      # Step 4: Build the project
       - name: Build
         run: npm run build
-      
+
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          # Ensure SPA works on GitHub Pages
+          # Optional: enable force push to overwrite previous deployment
+          force_orphan: true
