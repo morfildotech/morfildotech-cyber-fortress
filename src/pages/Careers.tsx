@@ -59,9 +59,13 @@ const Careers = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
               Join Our <span className="text-accent">Cybersecurity</span> Team
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               We believe our greatest asset is our passionate team. We foster growth, innovation, and collaboration in an environment where cybersecurity professionals thrive.
             </p>
+            <div className="bg-gradient-cyber/20 border border-accent/30 rounded-lg p-6 max-w-2xl mx-auto">
+              <p className="text-lg font-semibold text-accent mb-2">🚀 Starting Hiring Soon!</p>
+              <p className="text-muted-foreground">We're preparing to expand our team with exciting new opportunities. Stay tuned for upcoming openings!</p>
+            </div>
           </div>
         </div>
       </section>
@@ -231,8 +235,8 @@ const Careers = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <span className="text-white font-semibold">📧 morfildotech@gmail.com</span>
-                <Button variant="secondary" size="lg" className="font-semibold">
-                  <a href="mailto:morfildotech@gmail.com">Send Application</a>
+                <Button variant="secondary" size="lg" className="font-semibold opacity-50 cursor-not-allowed" disabled>
+                  We are not hiring now
                 </Button>
               </div>
             </div>
