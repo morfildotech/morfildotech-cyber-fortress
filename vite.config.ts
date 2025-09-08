@@ -4,8 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // 👇 Correct base path for GitHub Pages
-  // Use repo name in production, root ("/") in development
+  // Base path for GitHub Pages
   base: mode === "production" ? "/morfildotech-cyber-fortress/" : "/",
 
   server: {
