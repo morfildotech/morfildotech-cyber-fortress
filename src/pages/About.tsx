@@ -5,14 +5,14 @@ import { Shield, Target, Users, Award, CheckCircle, Zap } from "lucide-react";
 
 const About = () => {
   const achievements = [
-    { company: "Meta/Facebook", logo: "🔵" },
-    { company: "Google", logo: "🔴" },
-    { company: "Microsoft", logo: "🟢" },
-    { company: "Mozilla", logo: "🟠" },
-    { company: "Apple", logo: "⚫" },
-    { company: "Quora", logo: "🔴" },
-    { company: "Tesla", logo: "🔴" },
-    { company: "Shopify", logo: "🟢" }
+    { company: "Meta/Facebook", logo: "👤", bgColor: "bg-blue-600" },
+    { company: "Google", logo: "🔍", bgColor: "bg-red-500" },
+    { company: "Microsoft", logo: "🪟", bgColor: "bg-blue-500" },
+    { company: "Mozilla", logo: "🦊", bgColor: "bg-orange-500" },
+    { company: "Apple", logo: "🍎", bgColor: "bg-gray-800" },
+    { company: "Quora", logo: "❓", bgColor: "bg-red-600" },
+    { company: "Tesla", logo: "⚡", bgColor: "bg-red-500" },
+    { company: "Shopify", logo: "🛒", bgColor: "bg-green-600" }
   ];
 
   const values = [
@@ -138,7 +138,9 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {achievements.map((achievement, index) => (
               <Card key={index} className="card-glow bg-card/50 backdrop-blur-sm border-border/50 text-center p-6">
-                <div className="text-4xl mb-4">{achievement.logo}</div>
+                <div className={`w-12 h-12 mx-auto mb-4 rounded-lg ${achievement.bgColor} flex items-center justify-center`}>
+                  <span className="text-2xl text-white">{achievement.logo}</span>
+                </div>
                 <h3 className="font-semibold text-accent">{achievement.company}</h3>
               </Card>
             ))}
