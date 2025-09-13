@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Shield, Clock, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -170,8 +169,8 @@ const Contact = () => {
                       />
                     </div>
                     
-                    <Button type="submit" size="lg" className="w-full cyber-glow text-lg py-6 hover-scale">
-                      Get in Touch
+                    <Button type="submit" size="lg" className="w-full cyber-glow text-lg py-6">
+                      Send Message
                     </Button>
                   </form>
                 </CardContent>
@@ -234,11 +233,11 @@ const Contact = () => {
               Don't wait for a security breach. Contact Morfildotech today and take the first step towards comprehensive cybersecurity protection.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="cyber-glow text-lg px-8 py-6 hover-scale">
-                <a href="mailto:info@morfildotech.com?subject=Security Consultation Request&body=Hi Morfildotech Team,%0D%0A%0D%0AI am interested in discussing cybersecurity solutions for my organization. We need comprehensive security assessment and would like to understand how your expertise can help protect our business.%0D%0A%0D%0APlease let me know your availability for a consultation.%0D%0A%0D%0ABest regards">Email Us Now</a>
+              <Button asChild size="lg" className="cyber-glow text-lg px-8 py-6">
+                <a href="mailto:info@morfildotech.com">Email Us Now</a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-accent text-accent hover:bg-accent hover:text-accent-foreground hover-scale">
-                <Link to="/services">View Our Services</Link>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+                <a href="/services">View Our Services</a>
               </Button>
             </div>
           </div>

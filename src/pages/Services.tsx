@@ -51,8 +51,8 @@ const Services = () => {
     },
     {
       icon: Code,
-      title: "Source Code Audit (SAST)",
-      description: "Static Application Security Testing with deep code review to detect insecure coding practices, data handling flaws, improper authentication, use of libraries, compliance gaps, and architectural weaknesses."
+      title: "Source Code Audit",
+      description: "Deep code review to detect insecure coding practices, data handling flaws, improper authentication, use of libraries, compliance gaps, and architectural weaknesses."
     },
     {
       icon: Monitor,
@@ -61,36 +61,16 @@ const Services = () => {
     },
     {
       icon: Container,
-      title: "Container & CI/CD Security",
-      description: "Full review of Docker/Kubernetes images, configurations, runtime security, orchestration layers, and CI/CD pipeline integrations. Secure DevOps practices and continuous security monitoring."
+      title: "Container Security Audit",
+      description: "Full review of Docker/Kubernetes images, configurations, runtime security, orchestration layers, and CI/CD pipeline integrations. Identify vulnerabilities and misconfigurations in containerized systems."
     },
     {
       icon: Award,
-      title: "Software Composition Analysis (SCA)",
-      description: "SBOM generation, third-party component analysis, license compliance, vulnerability detection in open-source libraries, and supply chain security assessment."
+      title: "ISO 27001 Audit Consultancy",
+      description: "Gap analysis, risk management, policy review, internal audits, and compliance readiness for ISO 27001."
     },
     {
       icon: GraduationCap,
-      title: "Embedded Security Testing",
-      description: "IoT device security, firmware analysis, hardware security testing, protocol analysis, and embedded system penetration testing for connected devices."
-    },
-    {
-      icon: Users,
-      title: "Dynamic Application Security Testing (DAST)",
-      description: "Runtime security testing, behavioral analysis, real-time vulnerability detection, and comprehensive application security validation in production environments."
-    },
-    {
-      icon: Shield,
-      title: "Software Security Architecture Review",
-      description: "Comprehensive review of software design patterns, security controls implementation, threat modeling, secure coding practices, and architectural security assessment."
-    },
-    {
-      icon: Code,
-      title: "SBOM & Supply Chain Security",
-      description: "Software Bill of Materials generation, dependency analysis, supply chain risk assessment, third-party component security evaluation, and vendor security compliance."
-    },
-    {
-      icon: Monitor,
       title: "Corporate Cybersecurity Training",
       description: "Training programs to empower employees with knowledge of modern threats, phishing defense, and secure digital practices."
     },
@@ -127,7 +107,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="card-glow bg-card/50 backdrop-blur-sm border-border/50 h-full hover-scale animate-fade-in" style={{animationDelay: `${0.1 * index}s`}}>
+              <Card key={index} className="card-glow bg-card/50 backdrop-blur-sm border-border/50 h-full">
                 <CardHeader>
                   <div className="flex items-center justify-center w-16 h-16 rounded-lg bg-gradient-cyber cyber-glow mb-4">
                     <service.icon className="h-8 w-8 text-white" />
@@ -152,10 +132,10 @@ const Services = () => {
               Our expert team can design and implement tailored cybersecurity strategies for your unique requirements
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="cyber-glow text-lg px-8 py-6 hover-scale">
-                <a href="mailto:info@morfildotech.com?subject=Custom Security Solution Request&body=Hi Morfildotech Team,%0D%0A%0D%0AI am interested in discussing a custom cybersecurity solution for my organization. We would like to explore your comprehensive security services and understand how you can help protect our digital infrastructure.%0D%0A%0D%0APlease let me know the next steps to schedule a detailed consultation.%0D%0A%0D%0ARegards">Discuss Your Needs</a>
+              <Button asChild size="lg" className="cyber-glow text-lg px-8 py-6">
+                <Link to="/contact">Discuss Your Needs</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-accent text-accent hover:bg-accent hover:text-accent-foreground hover-scale">
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-accent text-accent hover:bg-accent hover:text-accent-foreground">
                 <Link to="/about">Learn More About Us</Link>
               </Button>
             </div>
